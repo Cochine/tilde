@@ -32,7 +32,7 @@
       ['Download', 'IGGGamess', 'igg', 'http://igg-games.com/', '/?s={}', '#F8F8F9'],
     ],
     // give suggestions as you type
-    suggestions: true,
+    suggestions: false,
     // max amount of suggestions that will ever be displayed
     suggestionsLimit: 5,
     // the order and limit for each suggestion influencer
@@ -49,7 +49,7 @@
     // put a space before any other queries to prevent unwanted redirects
     instantRedirect: false,
     // open queries in a new tab
-    newTab: false,
+    newTab: true,
     // dynamic background colors when command domains are matched
     colors: false,
     // the delimiter between the key and your search query
@@ -74,17 +74,27 @@
 <title>~</title>
 
 <style type="text/css">
-  @import url('https://fonts.googleapis.com/css?family=Lato:400,900');
+  @import url('https://fonts.googleapis.com/css?family=Pacifico:400,900');
+  html {
+    height: 100%;
+  }  
   body {
+/*
+    background: url('IMG_4677.JPG') no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: 1200px;
+*/
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 115%;
+    height: 100%;
     margin: 0;
     padding: 0;
     transition: background .2s;
-    font-family: Lato, sans-serif;
+    font-family: 'Pacifico', cursive;
     color: #fff;
     background-color: #000;
   }
@@ -100,8 +110,9 @@
     outline: 0;
     background: transparent;
     color: #fff;
-    background-color: black;
-    font-family: Lato, sans-serif;
+/*    background-color: black;*/
+    font-size: 3.5em;
+    font-family: 'Pacifico', cursive;
     text-align: center;
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -119,16 +130,20 @@
   }
   #clock {
     display: block;
-    margin-top: -1em;
+    margin-top: -0.35em;
     font-size: 6rem;
     letter-spacing: .05em;
     cursor: pointer;
   }
   #search-form {
     padding: 1em;
+/*
     background: black;
     transition: background-color .5s;
     box-sizing: border-box;
+*/
+      font-size: 0.75em;
+     font-family: 'Pacifico', cursive;
     z-index: 2;
   }
   #search-form>div {
@@ -137,11 +152,13 @@
   #search-input,
   #search-input:focus {
     width: 100%;
-    margin-bottom: 20px;
-    font-size: 1.5em;
+    margin-top: 150px;
+    font-size: 3.5em;
     font-weight: 900;
     letter-spacing: .05em;
     text-transform: uppercase;
+    visibility:visible;
+    font-family: 'Pacifico', cursive;
   }
   #search-suggestions {
     display: none;
@@ -293,21 +310,47 @@
       grid-template-columns: repeat(5, 250px) 185px;
     }
   }
+  .greeting {
+    position: fixed;
+    top: 0;
+    left: 0;
+    font-size: 3.5em;
+    overflow: auto;
+    box-sizing: border-box;
+    margin-top: -85px;
+    width: 100%;
+    height: 100%;
+    visibility: visible;
+  }
+  div.wrap {
+    height: 100%;
+    overflow: hidden;
+  }
 </style>
 
+
+<html>
+<body>
+    
+    <div></div>
 <div class="center">
   <time id="clock"></time>
 </div>
 
+<div class="greeting center">
+hello
+</div>
+
 <form class="overlay center" id="search-form" autocomplete="off" spellcheck="false">
   <div>
-    <input id="search-input" type="text">
+    <input id="search-input" type="text" onfocus="this.value=''" value="have a good day.">
     <ul id="search-suggestions"></ul>
   </div>
 </form>
 
 <aside class="overlay center" id="help"></aside>
-
+    </body>
+</html>
 <script>
   const $ = {
     bodyClassAdd: c => $.el('body').classList.add(c),
