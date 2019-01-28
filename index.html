@@ -6,7 +6,7 @@
     // if none of the specified keys are matched, the '*' key is used
     commands: [
       [null, 'Google', '*', 'https://encrypted.google.com', '/search?q={}', '#111'],
-        [null, 'Github', 'g', 'https://github.com/', '/search?q={}', '#111'],
+      [null, 'Github', 'g', 'https://github.com/', '/search?q={}', '#111'],
       ['School', 'Blackboard', 'q', 'https://q.utoronto.ca/', null, '#022f62'],
       ['School', 'Piazza', 'p', 'https://piazza.com/class/jjyr09a0rbm6a8', null, '#1db954'],
       ['School', 'Acorn', 'a', 'https://acorn.utoronto.ca', null, '#ABE3FF'],
@@ -49,7 +49,7 @@
     // put a space before any other queries to prevent unwanted redirects
     instantRedirect: false,
     // open queries in a new tab
-    newTab: true,
+    newTab: false,
     // dynamic background colors when command domains are matched
     colors: false,
     // the delimiter between the key and your search query
